@@ -1,2 +1,1 @@
-# github-searcher
-GitHub repository search application
+# Github Searcher App
