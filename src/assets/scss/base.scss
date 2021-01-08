@@ -1,2 +1,24 @@
 @import './variables.scss';
 @import './mixins.scss';
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0 !important;
+}
+
+input, select {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 10px 5px;
+}
+
+.container {
+    margin: 0 5%;
+}
+
+.row {
+    display: flex;
+    @include breakpoint(sm){
+        display: block;
+        text-align: center;
+    }
+}

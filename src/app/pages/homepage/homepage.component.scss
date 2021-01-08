@@ -1,0 +1,56 @@
+@import '../../../styles.scss';
+
+.logo {
+    img {
+        width: 50px;
+    }
+}
+
+.content {
+    padding-left: 10px;
+    h3 {
+        padding-bottom: 5px;
+    }
+    p {
+        color: dimgrey;
+    }
+}
+
+input, select {
+    width: 100%;
+}
+
+.search-area {
+    padding-top: 15px;
+    .search-box {
+        width: 50%;
+        margin: 0 10px 0 0;
+        @include breakpoint(sm){
+            width: 100%;
+            margin: 0;
+        }
+    }
+    
+    .types-dropdown {
+        width: 15%;
+        margin: 0 0 0 10px;
+        @include breakpoint(sm){
+            width: 100%;
+            margin: 0;
+            padding-top: 10px;
+        }
+    }
+}
+
+.search-form {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -50%);
+    @include breakpoint(sm){
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+    }
+}
