@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-listing',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listing.component.scss']
 })
 export class ListingComponent implements OnInit {
+
+  @Input('searchType') searchType: string = 'user';
 
   constructor() { }
 

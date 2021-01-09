@@ -1,5 +1,5 @@
 <form [formGroup]="programForm">
-    <div class="search-form" [ngClass]="{'active': isSearchEnabled}">
+    <div class="search-form" [ngClass]="{'active': !isSearchEnabled}">
         <div class="container">
             <div class="row">
                 <div class="logo">
@@ -16,9 +16,9 @@
                     <input type="text" placeholder="Start typing to search" (keyup)="search($event)" />
                 </div>
                 <div class="types-dropdown">
-                    <select>
-                        <option>Users</option>
-                        <option>Repositories</option>
+                    <select (change)="onChangeSearchType($event)">
+                        <option value="users">Users</option>
+                        <option value="repositories">Repositories</option>
                     </select>
                 </div>
             </div>
@@ -26,8 +26,8 @@
     </div>
 </form>
 
-<div class="listing" [ngClass]="{'active': isSearchEnabled}">
+<div class="listing" [ngClass]="{'active': !isSearchEnabled}">
     <div class="container">
-        <app-listing></app-listing>
+        <app-listing [searchType]="searchType"></app-listing>
     </div>
 </div>

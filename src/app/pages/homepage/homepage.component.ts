@@ -10,12 +10,13 @@ export class HomepageComponent implements OnInit {
 
   programForm: FormGroup;
   isSearchEnabled: boolean = false;
+  searchType: string = 'users';
 
   constructor(
     private fb: FormBuilder
   ) {
     this.programForm = this.fb.group({
-      search: ['']
+      search: [''],
     });
   }
 
@@ -30,6 +31,11 @@ export class HomepageComponent implements OnInit {
     } else {
       this.isSearchEnabled = false;
     }
+  }
+
+  onChangeSearchType(event) {
+    let value = event.target.value;
+    this.searchType = value;
   }
 
 }
