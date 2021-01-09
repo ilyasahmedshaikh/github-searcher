@@ -5,9 +5,10 @@ import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomepageComponent } from './homepage.component';
 
 import { SharedModule } from '../../shared-components/shared.module';
+import { ListingComponent } from './listing/listing.component';
 
 @NgModule({
-  declarations: [HomepageComponent],
+  declarations: [HomepageComponent, ListingComponent],
   imports: [
     CommonModule,
     HomepageRoutingModule,
