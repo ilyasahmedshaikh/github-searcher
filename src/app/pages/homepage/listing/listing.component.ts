@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListingComponent implements OnInit {
 
-  @Input('searchType') searchType: string = 'user';
+  @Input('searchType') searchType: string = 'users';
+  @Input('data') data: any = [];
 
   constructor() { }
 

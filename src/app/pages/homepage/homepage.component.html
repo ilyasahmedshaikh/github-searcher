@@ -27,7 +27,8 @@
 </form>
 
 <div class="listing" [ngClass]="{'active': isSearchEnabled}">
-    <div class="container">
-        <app-listing [searchType]="searchType"></app-listing>
+    <div class="container" *ngIf="data">
+        <p class="p-y-10">{{data.total_count}} results found</p>
+        <app-listing [searchType]="searchType" [data]="data.items"></app-listing>
     </div>
 </div>

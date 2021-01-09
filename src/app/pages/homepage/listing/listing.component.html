@@ -1,14 +1,5 @@
 <div class="row">
-    <div class="fourth">
-        <app-card [cardType]="searchType"></app-card>
-    </div>
-    <div class="fourth">
-        <app-card [cardType]="searchType"></app-card>
-    </div>
-    <div class="fourth">
-        <app-card [cardType]="searchType"></app-card>
-    </div>
-    <div class="fourth">
-        <app-card [cardType]="searchType"></app-card>
+    <div class="fourth" *ngFor="let item of data">
+        <app-card [cardType]="searchType" [item]="item"></app-card>
     </div>
 </div>
