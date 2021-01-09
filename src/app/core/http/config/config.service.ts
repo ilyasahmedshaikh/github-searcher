@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
+  endpoint: string = "https://api.github.com/";
+
   constructor() { }
 }
