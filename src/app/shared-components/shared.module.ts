@@ -17,7 +17,9 @@ import { CardComponent } from './card/card.component';
     ReactiveFormsModule
   ],
   exports: [
-    CardComponent
+    CardComponent,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
