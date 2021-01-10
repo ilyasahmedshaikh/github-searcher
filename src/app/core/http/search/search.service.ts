@@ -13,9 +13,9 @@ export class SearchService {
     private config: ConfigService
   ) { }
 
-  getUsers(searchParam) {
+  getUsers(searchParam, searchType) {
     const params = new HttpParams({fromString: `q=${searchParam}`});
-    return this.http.get(`${this.config.endpoint}search/users`, { params });
+    return this.http.get(`${this.config.endpoint}search/${searchType}`, { params });
   }
 
 }

@@ -28,7 +28,11 @@
 
 <div class="listing" [ngClass]="{'active': isSearchEnabled}">
     <div class="container" *ngIf="data">
-        <p class="p-y-10">{{data.total_count}} results found</p>
+        <p class="p-y-10" *ngIf="data.items">{{data.total_count}} results found</p>
         <app-listing [searchType]="searchType" [data]="data.items"></app-listing>
+    </div>
+
+    <div class="container" *ngIf="!data">
+        <img class="loader" src="../../../assets/images/loader.gif" />
     </div>
 </div>

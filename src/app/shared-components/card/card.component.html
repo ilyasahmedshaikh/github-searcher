@@ -5,7 +5,7 @@
     <div class="row">
         <ul>
             <li>
-                <a href={{item.repos_url}}>
+                <a href={{item.html_url}} target="blank">
                     <i class="fas fa-code-branch"></i> Repositories
                 </a>
             </li>
@@ -24,24 +24,24 @@
 </div>
 
 <div class="card" *ngIf="cardType == 'repositories'">
-    <img src="https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg" />
-    <h3 class="text-center p-y-10">angular-app</h3>
+    <img src={{item.owner.avatar_url}} />
+    <h3 class="text-center p-y-10">{{ (item.owner.login.length>12)? (item.owner.login | slice:0:12)+'..':(item.owner.login) }}</h3>
 
     <div class="row">
         <ul>
             <li>
-                <a href="#">
-                    <i class="far fa-user"></i> dtrupenn
+                <a href={{item.owner.html_url}} target="blank">
+                    <i class="far fa-user"></i> {{ (item.owner.login.length>10)? (item.owner.login | slice:0:10)+'..':(item.owner.login) }}
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-user-friends"></i> Followers
+                <a>
+                    <i class="fas fa-user-friends"></i> Forks ({{item.forks_count}})
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="far fa-building"></i> Organizations
+                <a>
+                    <i class="fas fa-eye"></i> Watchers ({{item.watchers_count}})
                 </a>
             </li>
         </ul>

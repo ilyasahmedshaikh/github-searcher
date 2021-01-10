@@ -31,27 +31,36 @@ export class HomepageComponent implements OnInit {
     let search = this.programForm.value.search;
 
     if(search.length >= 3) {
-      this.getUsers();
+      this.getData();
+    } 
+    else {
+      this.data = [];
+      this.isSearchEnabled = false;
     }
-    
 
     if(search) {
       this.isSearchEnabled = true;
-    } else {
+    } 
+    else {
       this.isSearchEnabled = false;
+      this.data = [];
     }
   }
 
   onChangeSearchType(event) {
     let value = event.target.value;
     this.searchType = value;
+
+    // making API call to fetch on searchType change
+    this.data = [];
+    this.getData();
   }
 
-  getUsers() {
+  getData() {
     let searchKeyword = this.programForm.value.search;
-    this.searchService.getUsers(searchKeyword).subscribe(res => {
+    this.searchService.getUsers(searchKeyword, this.searchType).subscribe(res => {
       this.data = res;
-      console.log(this.data);
+      // console.log(this.data);
     })
   }
 
