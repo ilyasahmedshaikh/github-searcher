@@ -27,7 +27,7 @@ input, select {
 .fourth {
     width: 23%;
     @include breakpoint(md){
-        width: 50%;
+        width: 47%;
     }
     @include breakpoint(sm){
         width: 100%;
