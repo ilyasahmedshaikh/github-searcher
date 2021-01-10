@@ -58,10 +58,18 @@ export class HomepageComponent implements OnInit {
 
   getData() {
     let searchKeyword = this.programForm.value.search;
-    this.searchService.getUsers(searchKeyword, this.searchType).subscribe(res => {
-      this.data = res;
-      // console.log(this.data);
-    })
+
+    if (searchKeyword) {
+      this.searchService.getUsers(searchKeyword, this.searchType).subscribe(res => {
+        this.data = res;
+        // console.log(this.data);
+      }, error => {
+        alert(error);
+      })
+    }
+    else {
+      alert('Search field is empty. Please type any username or repository name.');
+    }
   }
 
 }
